@@ -74,6 +74,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foo__ = __webpack_require__(5);
+//import from 'lodash' 的意思是从 lodash 里得到默认导出，并将默认导出命名为 ，这个 _ 可以换成任何一个其他的变量名。
 
 
 
@@ -82,7 +83,7 @@ function component() {
     var element = __WEBPACK_IMPORTED_MODULE_1_jquery___default()('<div></div>');
     // Lodash, currently included via a script, is required for this line to work
     // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.html(__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello','webpack'], ' '))
+    element.html(__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['hioo','webpack'], ' '))
 
     // return element;
     return element.get(0);
@@ -91,7 +92,7 @@ function component() {
 document.body.appendChild(component());
 console.log(__WEBPACK_IMPORTED_MODULE_2__foo__["a" /* default */])
 console.log(Object(__WEBPACK_IMPORTED_MODULE_2__foo__["a" /* default */])())
-
+console.log(1)
 
 /***/ }),
 /* 1 */

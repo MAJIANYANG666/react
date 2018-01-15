@@ -9,5 +9,5 @@ AV.init({
     region: 'us'
 
 
-})S
+})
 export default AV;

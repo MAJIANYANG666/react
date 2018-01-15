@@ -26,7 +26,6 @@ export default class UserDialog extends Component{
                                 <label>用户名</label>
                                 <input type="text"/>
                             </div>
-
                             <div className="row">
                                 <label>密码</label>
                                 <input type="password"/>

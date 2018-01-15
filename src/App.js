@@ -6,6 +6,8 @@ import TodoItem from './TodoItem'
 import 'normalize.css'
 import * as localStore from './localStore'
 //按 es6 的规范 import * as obj from "xxx" 会将 "xxx" 中所有 export 导出的内容组合成一个对象返回
+import AV from 'leancloud-storage'
+
 var APP_ID = 'kJVcuD8Fm4ufCYsQdzlvFQ4W-gzGzoHsz';
 var APP_KEY = 'fJgDDI92gXvaGIdOTK4qByct';
 
@@ -13,13 +15,8 @@ AV.init({
     appId: APP_ID,
     appKey: APP_KEY
 });
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-    words: 'Hello World!'
-}).then(function(object) {
-    alert('LeanCloud Rocks!');
-})
+
+
 
 class App extends Component {
   constructor(props){

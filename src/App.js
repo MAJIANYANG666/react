@@ -4,15 +4,15 @@ import './App.css';
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
 import 'normalize.css'
+import * as localStore from './localStore'
 
+//按 es6 的规范 import * as obj from "xxx" 会将 "xxx" 中所有 export 导出的内容组合成一个对象返回
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
       newTodo:'',
-      todoList:[
-
-      ]
+      todoList:localStore.load('todoList')||[]
     }
   }
   render() {
@@ -45,12 +45,14 @@ class App extends Component {
   toggle(e,todo){
       todo.status=todo.status==='completed'?'':'completed'
       this.setState(this.state)
+      localStore.save('todoList',this.state.todoList)
   }
   changeTitle(event){
       this.setState({
           newTodo:event.target.value,
           todoList:this.state.todoList
       })
+      localStore.save('todoList',this.state.todoList)
   }
   //传入一个函数
   //形参event等待被传入e
@@ -66,10 +68,12 @@ class App extends Component {
           newTodo:'',
           todoList:this.state.todoList
       })
+      localStore.save('todoList',this.state.todoList)
   }
   delete(event,todo){
       todo.deleted=true
       this.setState(this.state)
+      localStore.save('todoList',this.state.todoList)
   }
 }
 

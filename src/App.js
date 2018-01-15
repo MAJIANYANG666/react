@@ -6,7 +6,7 @@ import TodoItem from './TodoItem'
 import 'normalize.css'
 // import * as localStore from './localStore'
 //按 es6 的规范 import * as obj from "xxx" 会将 "xxx" 中所有 export 导出的内容组合成一个对象返回
-
+import UserDialog from './UserDialog'
 
 
 
@@ -42,11 +42,12 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
+          <UserDialog/>
       </div>
     );
   }
   componentDidUpdate(){
-      
+
   }
   toggle(e,todo){
       todo.status=todo.status==='completed'?'':'completed'

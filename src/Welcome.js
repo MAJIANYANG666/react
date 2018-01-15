@@ -1,4 +1,5 @@
 import React from 'react';//为什么要import React
+//因为要使用React.Component来实现继承
 class Welcome extends React.Component{
     constructor(props){
         super(props)
@@ -67,3 +68,6 @@ class Welcome extends React.Component{
 // }
 
 export default Welcome//为什么要export,为什么要加default
+//要把Welcome组件导出是外部能够引用，
+//default是默认导出，export default仅有一个，不需要知道所要加载模块的变量名，不需要加上{}
+//因为input里的文字通过input.value不会改变,react改写了，需要通过onchange来改变

@@ -7,6 +7,7 @@ import 'normalize.css'
 // import * as localStore from './localStore'
 //按 es6 的规范 import * as obj from "xxx" 会将 "xxx" 中所有 export 导出的内容组合成一个对象返回
 import UserDialog from './UserDialog'
+import {getCurrentUser,signOut} from './leanCloud'
 
 
 
@@ -14,7 +15,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-        user:{},
+        user:getCurrentUser()||{},
       newTodo:'',
       todoList:[]
     }
@@ -34,7 +35,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>{this.state.user.username||'我'}的待办</h1>
+        <h1>{this.state.user.username||'我'}的待办
+            {this.state.user.id? <button onClick={this.signOut.bind(this)}>登出</button>:null}
+        </h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo}
                      onChange={this.changeTitle.bind(this)}
@@ -46,6 +49,12 @@ class App extends Component {
           {this.state.user.id?null:<UserDialog onSignUp={this.onSignUp.bind(this)}/>}
       </div>
     );
+  }
+  signOut(){
+      signOut()
+      let stateCopy=JSON.parse(JSON.stringify(this.state))
+      stateCopy.user={}
+      this.setState(stateCopy)
   }
   onSignUp(user){
       let stateCopy = JSON.parse(JSON.stringify(this.state))

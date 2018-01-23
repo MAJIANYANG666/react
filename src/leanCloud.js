@@ -4,9 +4,8 @@ var APP_KEY = 'fJgDDI92gXvaGIdOTK4qByct';
 AV.init({
     appId: APP_ID,
     appKey: APP_KEY
-
-
 })
+
 export default AV;
 
 export function signUp(username,password,successFn,errorFn){

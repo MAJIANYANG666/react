@@ -28,6 +28,7 @@ export default class UserDialog extends Component{
             switch(error.code){
                 case 200:
                     alert('没有提供用户名,或者密码为空')
+                    break
                 case 202:
                     alert('用户名已被占用')
                     break

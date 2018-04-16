@@ -17,5 +17,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://majianyang666.github.io/react/build"
+  "homepage": "https://majianyang666.github.io/react-2/build"
 }
